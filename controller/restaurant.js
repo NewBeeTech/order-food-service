@@ -21,7 +21,8 @@ module.exports = {
             "name": "US",
             "chineseName": "美国"
           },
-          "mainImage": "https://pro.modao.cc/uploads3/images/1289/12896118/raw_1505974928.jpeg"
+          "mainImage": "https://pro.modao.cc" +
+          "/uploads3/images/1289/12896118/raw_1505974928.jpeg"
         }
       ],
       "total": 28
