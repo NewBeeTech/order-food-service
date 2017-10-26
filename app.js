@@ -8,6 +8,9 @@ const common = require('./common')
 
 const app = express()
 
+// 记录请求时间
+app.use(require('./middleware/requestLog'))
+
 app.use(compression())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

@@ -4,7 +4,10 @@ module.exports = {
 
   port: 30001,
 
-  log_dir: path.join(__dirname, '.logs'),
-
-  debug: true,
+  // TODO: 根据NODE_ENV设置不同的配置
+  log: {
+    dir: path.join(__dirname, '.logs'),
+    level: 'DEBUG',
+    appenders: ['console', 'file']
+  },
 }
