@@ -2,7 +2,7 @@
 
 set -e
 
-n_process=6
+n_process=1
 
 pm2=`find .. -path '*/.bin/pm2'|head -1`
 $pm2 start app.js -n order-food-service -i $n_process
