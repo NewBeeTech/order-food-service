@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+n_process=6
+
+pm2=`find .. -path '*/.bin/pm2'|head -1`
+$pm2 start app.js -n order-food-service -i $n_process
+
+echo let\'s watch log for a while
+$pm2 logs &
+pid_pm2=$!
+sleep 5
+kill $pid_pm2
+
+n_process_1=`$pm2 list|grep online|wc -l`
+if [ $n_process_1 -ne $n_process ]; then
+  $pm2 list
+  exit 1
+fi
