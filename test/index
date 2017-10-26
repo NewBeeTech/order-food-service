@@ -1,0 +1,20 @@
+# test server with some requests
+
+server_log=`pwd`/.server.log
+
+node app.js > $server_log &
+pid=$!
+
+# 测试用例会导致进程退出，所以这里先判断进程是否存在，存在再kill
+trap "sleep 1 && ps -p $pid && kill -9 $pid" EXIT
+
+while ! grep 'app listening on' $server_log > /dev/null; do
+  sleep 0.1
+done
+
+if ! node_modules/.bin/mocha test/suites; then
+echo log:
+  cat $server_log
+exit 1
+fi
+echo [ok] validateServer
