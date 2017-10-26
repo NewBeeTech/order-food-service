@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const child_process = require('child_process')
+
+const dirs = [
+  'common', 'controller', 'middleware', 'model',
+  'app.js', 'config.js', 'router.js',
+]
+
+for (var dir of dirs) {
+  if (!fs.existsSync(dir)) {
+    console.log(`dir not found, skip eslint for dir=${dir}`)
+    continue
+  }
+  child_process.execSync(`./node_modules/.bin/eslint ${dir}`,
+    {shell: true, stdio: 'inherit'})
+}

@@ -6,7 +6,8 @@ module.exports = {
    */
   getBaseInfo: function(req, res, next) {
     var data = {
-      "avatarUrl": "https://pro.modao.cc/uploads3/images/1264/12645881/raw_1505274594.jpeg",
+      "avatarUrl": "https://pro.modao.cc/uploads3" +
+      "/images/1264/12645881/raw_1505274594.jpeg",
       "nickname": "测试内容5e5x"
     }
     common.successRes(res, data)

@@ -11,7 +11,10 @@ log4js.configure({
     food: { type: 'file', filename: path.join(config.log_dir, 'food.log') }
   },
   categories: {
-    default: { appenders: [ 'out', 'food' ], level: config.debug ? 'DEBUG' : 'ERROR' }
+    default: {
+      appenders: [ 'out', 'food' ],
+      level: config.debug ? 'DEBUG' : 'ERROR'
+    }
   }
 })
 
