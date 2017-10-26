@@ -4,7 +4,7 @@
   "description": "菜译通 api",
   "main": "index.js",
   "scripts": {
-    "test": "test/index",
+    "test": "bin/eslint && test/index",
     "start": "echo TODO(use pm2)",
     "stop": "echo TODO"
   },
@@ -15,9 +15,9 @@
   "author": "GengerJing",
   "license": "ISC",
   "bugs": {
-    "url": "git+https://github.com/NewBeeTech/order-food-service.git"
+    "url": "https://github.com/NewBeeTech/order-food-service/issues"
   },
-  "homepage": "git+https://github.com/NewBeeTech/order-food-service.git",
+  "homepage": "https://github.com/NewBeeTech/order-food-service#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "compression": "^1.7.1",
@@ -28,7 +28,7 @@
     "session-file-store": "^1.1.2"
   },
   "devDependencies": {
+    "eslint": "^4.9.0",
     "mocha": "^4.0.1"
   }
 }
-

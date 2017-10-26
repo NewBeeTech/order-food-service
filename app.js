@@ -27,5 +27,5 @@ app.use(require('./middleware/auth'))
 app.use(require('./router'))
 
 app.listen(config.port, function() {
-  common.logger.info('app listening on port', config.port);
+  common.logger.info('app listening on port', config.port)
 })
