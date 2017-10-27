@@ -1,4 +1,4 @@
-module.exports = function(req, res, message) {
+module.exports = function(res, message) {
   var result = {
     code: -1,
     message: message

@@ -10,4 +10,9 @@ module.exports = {
     level: 'DEBUG',
     appenders: ['console', 'file']
   },
+
+  db: {
+    url: 'mongodb://localhost/food',
+    poolSize: 6,
+  }
 }
