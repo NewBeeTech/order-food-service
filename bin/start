@@ -3,17 +3,18 @@
 set -e
 
 n_process=1
+app_name=order-food-service
 
 pm2=`find .. -path '*/.bin/pm2'|head -1`
-$pm2 start app.js -n order-food-service -i $n_process
+$pm2 start app.js -n $app_name -i $n_process
 
 echo let\'s watch log for a while
-$pm2 logs &
+$pm2 logs $app_name &
 pid_pm2=$!
 sleep 5
 kill $pid_pm2
 
-n_process_1=`$pm2 list|grep online|wc -l`
+n_process_1=`$pm2 list|grep online|grep $app_name|wc -l`
 if [ $n_process_1 -ne $n_process ]; then
   $pm2 list
   exit 1

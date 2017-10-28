@@ -1,41 +1,107 @@
 const common = require('../common')
+const model = require('../model')
+const _ = require('lodash')
+const async = require('async')
 
 module.exports = {
   /*
    * 根据城市筛选餐厅列表
    */
   listByCity: function(req, res, next) {
-    var data = {
-      "rows": [
-        {
-          "_id": "xxx1",
-          "name": "Byran",
-          "cuisines": ["美国菜"],
-          "rating": 4.5,
-          "priceLevel": 3,
-          "city": {
-            "name": "New York",
-            "chineseName": "纽约"
-          },
-          "country": {
-            "name": "US",
-            "chineseName": "美国"
-          },
-          "mainImage": "https://pro.modao.cc" +
-          "/uploads3/images/1289/12896118/raw_1505974928.jpeg"
-        }
-      ],
-      "total": 28
-    }
-    common.successRes(res, data)
+
+    var filter = _.pick(req.body, ['city.name', 'country.name'])
+    var skip = (req.body.pageNo-1) * req.body.pageSize || 0
+    var limit = req.body.pageSize || 9
+
+    async.waterfall([
+    // 获取总数
+    (next) => {
+      model.Restaurant.count(filter, next)
+    },
+    // 根据城市筛选餐厅列表（按照餐厅星级倒序排列）
+    (count, next) => {
+      model.Restaurant
+        .find(filter)
+        .select('-__v')
+        .skip(skip)
+        .limit(limit)
+        .sort({rating: -1})
+        .exec(function(err, result) {
+          if (err) {
+            return common.failRes(res, err.message)
+          }
+          common.successRes(res, {rows: result, total: count})
+        })
+    },
+    ], function(err) {
+      return common.failRes(res, err.message)
+    })
   },
 
   /*
    * 获取餐厅详细信息(聚合了单品和套餐)
    */
-  getAggDetail: function(req, res, next) {
-    common.successRes(res, {})
-  },
+  getDetail: function(req, res, next) {
+    
+    var result = {}
+    var menu
+    async.waterfall([
+    // 根据id获取餐厅详情
+    (next) => {
+      model.Restaurant
+        .findById(req.body._id)
+        .select('-__v')
+        .exec(next)
+    },
+    // 根据menuId获取菜单
+    (restaurant, next) => {
+      result = restaurant.toObject()
+      model.Menu.findById(restaurant.menuId, next)
+    },
+    // 获取菜单下的单品信息
+    (_menu, next) => {
+      menu = _menu
+      model.ALaCarte
+        .find({_id: {$in: menu.aLaCarte}})
+        .select('-__v')
+        .exec(next)
+    },
+    (aLaCartes, next) => {
+      result.aLaCarte = _.groupBy(aLaCartes, o => {
+        return o.category.chineseName
+      })
 
-  // TODO: ....
+      // 获取菜单下的套餐信息
+      model.SetMenu
+        .find({_id: {$in: menu.setMenu}})
+        .select('-__v')
+        .exec(next)
+    },
+    (setMenus, next) => {
+      // 获取套餐下的单品信息
+      result.setMenus = {}
+      async.eachSeries(setMenus, (setMenu, nextSetMenu) => {
+        setMenu = setMenu.toObject()
+        model.ALaCarte
+          .find({_id: {$in: setMenu.setMenuDetail}})
+          .select('-__v')
+          .exec((err, cartes) => {
+            if (err) {
+              return nextSetMenu(err)
+            }
+            setMenu.setMenuDetail = _.groupBy(cartes, o => {
+              return o.category.chineseName
+            })
+            result.setMenus[setMenu.name.chineseName] = setMenu
+            nextSetMenu()
+          })
+      }, next)
+    },
+    (next) => {
+      common.successRes(res, result)
+    },
+    ], function(err) {
+      return common.failRes(res, err.message)
+    })
+  },
 }

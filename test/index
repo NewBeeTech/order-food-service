@@ -12,9 +12,7 @@ while ! grep 'app listening on' $server_log > /dev/null; do
   sleep 0.1
 done
 
-if ! node_modules/.bin/mocha test/suites; then
-echo log:
-  cat $server_log
-exit 1
-fi
-echo [ok] validateServer
+node_modules/.bin/mocha test/suites/city.test.js
+
+
+
