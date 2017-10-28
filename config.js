@@ -2,7 +2,7 @@ var path = require('path')
 module.exports = {
   session_key: 'food_default_key',
 
-  port: 30001,
+  port: 80,
 
   // TODO: 根据NODE_ENV设置不同的配置
   log: {
