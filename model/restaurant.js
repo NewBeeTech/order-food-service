@@ -29,6 +29,7 @@ var restaurantSchema = new Schema({
   notes: String,                 // 餐厅提示
   phoneNumber: String,           // 餐厅联系方式
   position: String,              // 餐厅位置（经纬度）
+  isVisible: Boolean,            // 是否可见
 })
 restaurantSchema.index({'city.name': 1, 'country.name': 1})
 mongoose.model('Restaurant', restaurantSchema, 'restaurant')
