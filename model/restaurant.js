@@ -28,7 +28,10 @@ var restaurantSchema = new Schema({
   detailImage: [String],         // 餐厅细节图
   notes: String,                 // 餐厅提示
   phoneNumber: String,           // 餐厅联系方式
-  position: String,              // 餐厅位置（经纬度）
+  position: {                    // 餐厅位置（经纬度）
+    // "type": String,
+    // "coordinates": [Number],
+  },              
   isVisible: Boolean,            // 是否可见
 })
 restaurantSchema.index({'city.name': 1, 'country.name': 1})

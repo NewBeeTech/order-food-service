@@ -3,7 +3,7 @@ var setMenu = [
   "_id": "setMenu_001",
   "operateTime": new Date(),
   "operator": "UT-TESTER",
-  "setMenuDetail": ["aLaCarte_000", "aLaCarte_001", "aLaCarte_004"],
+  "setMenuDetail": ["menuItem_000", "menuItem_001", "menuItem_004"],
   "desc": "套餐一含2个头菜1个主菜",
   "name": {
     chineseName: "套餐一",
@@ -15,7 +15,7 @@ var setMenu = [
   "_id": "setMenu_002",
   "operateTime": new Date(),
   "operator": "UT-TESTER",
-  "setMenuDetail": ["aLaCarte_002", "aLaCarte_003"],
+  "setMenuDetail": ["menuItem_002", "menuItem_003"],
   "desc": "套餐二含1个头菜1个主菜",
   "name": {
     chineseName: "套餐二",

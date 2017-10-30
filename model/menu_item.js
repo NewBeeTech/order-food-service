@@ -3,7 +3,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
-var aLaCarteSchema = new Schema({
+var menuItemSchema = new Schema({
   // An "anything goes" SchemaType
   _id: Schema.Types.Mixed,
   operateTime: Date,
@@ -13,6 +13,7 @@ var aLaCarteSchema = new Schema({
     chineseName: String
   },
   categoryNum: Number,        // 分类顺序
+  menuItemNum: Number,        // 菜品顺序
   description: String,        // 配料
   extraInfo: String,          // 附加信息
   image: String,              // 图片
@@ -44,7 +45,6 @@ var aLaCarteSchema = new Schema({
     }
   },
   price: Number,               // 价格
-  stock: Number,               // 库存（暂未用到）
 })
 
-mongoose.model('ALaCarte', aLaCarteSchema, 'a_la_carte')
+mongoose.model('MenuItem', menuItemSchema, 'menu_item')

@@ -25,9 +25,9 @@ describe('model', function() {
     (res, next) => {
       model.Menu.insertMany(mock.menu, next)
     },
-    // add a_la_carte
+    // add menu_item
     (res, next) => {
-      model.ALaCarte.insertMany(mock.a_la_carte, next)
+      model.MenuItem.insertMany(mock.menu_item, next)
     },
     // add set menu
     (res, next) => {
