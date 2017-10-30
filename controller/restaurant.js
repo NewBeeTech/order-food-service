@@ -10,6 +10,8 @@ module.exports = {
   listByCity: function(req, res, next) {
 
     var filter = _.pick(req.body, ['city.name', 'country.name'])
+    // 添加默认筛选条件
+    filter.isVisible = true
     var skip = (req.body.pageNo-1) * req.body.pageSize || 0
     var limit = req.body.pageSize || 9
 
@@ -64,6 +66,7 @@ module.exports = {
       model.ALaCarte
         .find({_id: {$in: menu.aLaCarte}})
         .select('-__v')
+        .sort({categoryNum: 1})
         .exec(next)
     },
     (aLaCartes, next) => {
@@ -85,6 +88,7 @@ module.exports = {
         model.ALaCarte
           .find({_id: {$in: setMenu.setMenuDetail}})
           .select('-__v')
+          .sort({categoryNum: 1})
           .exec((err, cartes) => {
             if (err) {
               return nextSetMenu(err)

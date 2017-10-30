@@ -28,16 +28,18 @@ var r = {
   ],
   "notes": "本店另外加12.5服务费",
   "phoneNumber": "098-49685",
-  "position": "34,56"
+  "position": "34,56",
+  "isVisible": true,
 }
 
 var restaurants = []
-for(var i=1; i<=3; i++) {
+for(var i=1; i<=4; i++) {
   restaurants.push(Object.assign(_.cloneDeep(r), {
     _id: 'restaurant_00' + i,
     name: 'Byran' + i,
     rating: 5 - i,
   }))
 }
+restaurants[3].isVisible = false
 
 module.exports = restaurants
