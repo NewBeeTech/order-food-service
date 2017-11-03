@@ -10,7 +10,7 @@ describe('model', function() {
     // delete old data
     (next) => {
       async.eachSeries(Object.keys(model), function(name, nextModel) {
-        model[name].remove({operator: 'UT-TESTER'}, nextModel)
+        model[name].remove({}, nextModel)
       }, next)
     },
       // add city
