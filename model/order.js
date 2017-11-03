@@ -4,12 +4,13 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var orderSchema = new Schema({
-  _id: Schema.Types.Mixed,
-  operateTime: Date,
-  operator: String,
+  createdTime: Date,
   openid: String, // 所属用户
   restaurantId: Schema.Types.Mixed, // 所属餐厅id
-  order_detail: String, // 订单详细信息
+  restaurantName: String, // 餐厅名称
+  country: String, // 餐厅所属国家
+  city: String, // 餐厅所属城市
+  orderDetail: String, // 订单详细信息
 })
 
 orderSchema.index({openid: 1})
