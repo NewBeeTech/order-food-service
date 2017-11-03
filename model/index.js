@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const config   = require('../config')
 const logger = require('../common').logger
-mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise
 
 mongoose.connect(config.db.url, {
 useMongoClient: true,
@@ -11,20 +11,20 @@ poolSize: config.poolSize,
     logger.info('connect to %s success', config.db.url)
   }, 
   (err) => {
-    logger.error('connect to %s error: ', config.db.url, err.message);
-    process.exit(1);
+    logger.error('connect to %s error: ', config.db.url, err.message)
+    process.exit(1)
   }
 )
 
 // models
-require('./a_la_carte')
+require('./menu_item')
 require('./city')
 require('./menu')
 require('./order')
 require('./restaurant')
 require('./set_menu')
 
-exports.ALaCarte         = mongoose.model('ALaCarte')
+exports.MenuItem         = mongoose.model('MenuItem')
 exports.City             = mongoose.model('City')
 exports.Menu             = mongoose.model('Menu')
 exports.Order            = mongoose.model('Order')

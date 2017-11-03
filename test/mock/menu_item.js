@@ -1,7 +1,7 @@
 const _ = require('lodash')
 
 var aLaCarte = {
-  "_id": "aLaCarte_001",
+  "_id": "menuItem_001",
   "operateTime": new Date(),
   "operator": "UT-TESTER",
   "category": {
@@ -9,6 +9,7 @@ var aLaCarte = {
     "name": "The first dash"
   },
   "categoryNum": 1,
+  "menuItemNum": 1,
   "description": "配料信息mock数据",
   "extraInfo": "附加信息mock数据",
   "image": "https://m.360buyimg.com/n12/jfs/t2938/141/161562315/370464/79e5296/574e38faNb075dd83.jpg!q70.jpg",
@@ -44,7 +45,6 @@ var aLaCarte = {
     }
   },
   "price": 3,
-  "stock": 6,
 }
 
 var arr = []
@@ -52,12 +52,13 @@ var arr = []
 for(var i=0; i<3; i++) {
   var o = _.cloneDeep(aLaCarte)
   arr.push(Object.assign(o, {
-    _id: 'aLaCarte_00' +i,
+    _id: 'menuItem_00' +i,
     category: {
       chineseName: '头菜',
       name: 'The first dash',
     },
     categoryNum: 1,
+    menuItemNum: 12 - i,
     name: {
       chineseName: '面包和橄榄' + i,
       name: 'Bread and Olives' + i
@@ -68,12 +69,13 @@ for(var i=0; i<3; i++) {
 for(var i=3; i<6; i++) {
   var o = _.cloneDeep(aLaCarte)
   arr.push(Object.assign(o, {
-    _id: 'aLaCarte_00' +i,
+    _id: 'menuItem_00' +i,
     category: {
       chineseName: '主菜',
       name: 'The Main dash',
     },
     categoryNum: 2,
+    menuItemNum: 12 - i,
     name: {
       chineseName: '大龙虾' + i,
       name: 'xxxx' + i

@@ -13,6 +13,6 @@ for (var dir of dirs) {
     console.log(`dir not found, skip eslint for dir=${dir}`)
     continue
   }
-  child_process.execSync(`./node_modules/.bin/eslint ${dir}`,
+  child_process.execSync(`./node_modules/.bin/eslint -c eslintrc.js ${dir}`,
     {shell: true, stdio: 'inherit'})
 }

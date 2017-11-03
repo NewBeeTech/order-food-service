@@ -63,10 +63,10 @@ module.exports = {
     // 获取菜单下的单品信息
     (_menu, next) => {
       menu = _menu
-      model.ALaCarte
+      model.MenuItem
         .find({_id: {$in: menu.aLaCarte}})
         .select('-__v')
-        .sort({categoryNum: 1})
+        .sort({categoryNum: 1, menuItemNum: 1})
         .exec(next)
     },
     (aLaCartes, next) => {
@@ -85,10 +85,10 @@ module.exports = {
       result.setMenus = {}
       async.eachSeries(setMenus, (setMenu, nextSetMenu) => {
         setMenu = setMenu.toObject()
-        model.ALaCarte
+        model.MenuItem
           .find({_id: {$in: setMenu.setMenuDetail}})
           .select('-__v')
-          .sort({categoryNum: 1})
+          .sort({categoryNum: 1, menuItemNum: 1})
           .exec((err, cartes) => {
             if (err) {
               return nextSetMenu(err)

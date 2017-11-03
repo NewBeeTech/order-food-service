@@ -28,7 +28,10 @@ var r = {
   ],
   "notes": "本店另外加12.5服务费",
   "phoneNumber": "098-49685",
-  "position": "34,56",
+  "position": {
+    "type": "Point",
+    "coordinates": [35, 67]
+  },
   "isVisible": true,
 }
 
