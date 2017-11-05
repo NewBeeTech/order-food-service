@@ -1,18 +1,30 @@
 var path = require('path')
 module.exports = {
-  session_key: 'food_default_key',
-
   port: 80,
 
-  // TODO: 根据NODE_ENV设置不同的配置
+  // TODO: 部署时请根据需要更改配置
   log: {
     dir: path.join(__dirname, '.logs'),
     level: 'DEBUG',
     appenders: ['console', 'file']
   },
 
+  // TODO: 部署时请根据需要更改配置
   db: {
     url: 'mongodb://localhost/food',
     poolSize: 6,
+  },
+
+  // TODO: 部署时请根据需要更改配置
+  auth: {
+    uri: 'https://api.weixin.qq.com/sns/jscode2session',
+    appid: 'xxx',
+    secret: 'xxx',
+  },
+
+  // TODO: 部署时请根据需要更改配置
+  session: {
+    key: 'food_default_key',
+    maxAge: 5 * 1000 * 60, // 单位是毫秒
   }
 }
