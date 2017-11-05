@@ -8,7 +8,7 @@ module.exports = {
    * 获取用户的历史订单
    */
   getOrderList: function(req, res, next) {
-    var filter = {openid: req.body.openid}
+    var filter = {openid: req._internal.openid}
     model.Order
       .find(filter)
       .select('-__v')

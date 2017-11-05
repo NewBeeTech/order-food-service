@@ -16,8 +16,8 @@ module.exports = {
 
     // fill default field
     order.createdTime = new Date()
-    // TODO: fill openid
-    order.openid = 'test_user'
+    // fill openid
+    order.openid = req._internal.openid
 
     async.waterfall([
     (next) => {
