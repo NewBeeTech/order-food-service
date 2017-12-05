@@ -12,8 +12,8 @@ module.exports = {
     var filter = _.pick(req.body, ['city.name', 'country.name'])
     // 添加默认筛选条件
     filter.isVisible = true
-    var skip = (req.body.pageNo-1) * req.body.pageSize || 0
-    var limit = req.body.pageSize || 9
+    var skip = Number((req.body.pageNo-1) * req.body.pageSize || 0)
+    var limit = Number(req.body.pageSize || 9)
 
     async.waterfall([
     // 获取总数

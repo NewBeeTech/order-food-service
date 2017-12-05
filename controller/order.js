@@ -27,6 +27,9 @@ module.exports = {
         .exec(next)
     },
     (restaurant, next) => {
+      if (!restaurant) {
+        return common.failRes(res, '餐厅不存在')
+      }
       // fill restaurant info
       order.restaurantName = restaurant.name
       order.city = restaurant.city

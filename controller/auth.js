@@ -29,7 +29,8 @@ module.exports = {
       var cmd = 'head -n 80 /dev/urandom | tr -dc A-Za-z0-9 | head -c 168'
       exec(cmd, function(err, stdout, stderr){
         if (err || !stdout) {
-          return common.failRes(res, '获取第三方session失败, error:' + (err && err.message))
+          return common.failRes(res,
+            '获取第三方session失败, error:' + (err && err.message))
         }
         req.session[stdout] = {
           openid: data.openid,
