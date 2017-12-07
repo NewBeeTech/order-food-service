@@ -11,17 +11,17 @@ module.exports = {
 
   // TODO: 部署时请根据需要更改配置
   db: {
-    // url: 'mongodb://root:*******@dds-bp12f333bc784c141173.mongodb.rds.aliyuncs.com:3717,' +
-    // 'dds-bp12f333bc784c142459.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4725333'
-    url: 'mongodb://localhost/food',
+   url: 'mongodb://root:caieatongCYT1024@dds-bp12f333bc784c141173.mongodb.rds.aliyuncs.com:3717,' +
+   'dds-bp12f333bc784c142459.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4725333',
+    //url: 'mongodb://localhost/food',
     poolSize: 6,
   },
 
   // TODO: 部署时请根据需要更改配置
   auth: {
     uri: 'https://api.weixin.qq.com/sns/jscode2session',
-    appid: 'xxx',
-    secret: 'xxx',
+    appid: 'wx63bb49e66f6c6699',
+    secret: 'b3789f83903b47d8e76446222e5c8abb',
   },
 
   // TODO: 部署时请根据需要更改配置
