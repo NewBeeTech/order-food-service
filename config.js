@@ -1,6 +1,6 @@
 var path = require('path')
 module.exports = {
-  port: 80,
+  port: 8090,
 
   // TODO: 部署时请根据需要更改配置
   log: {
@@ -11,6 +11,8 @@ module.exports = {
 
   // TODO: 部署时请根据需要更改配置
   db: {
+    // url: 'mongodb://root:*******@dds-bp12f333bc784c141173.mongodb.rds.aliyuncs.com:3717,' +
+    // 'dds-bp12f333bc784c142459.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-4725333',
     url: 'mongodb://localhost/food',
     poolSize: 6,
   },
