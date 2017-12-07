@@ -45,4 +45,47 @@ for(var i=1; i<=4; i++) {
 }
 restaurants[3].isVisible = false
 
+restaurants.push({
+  "_id": "v1_mock_restaurant_01",
+  "opreateTime": new Date(),
+  "operator": "MOCKER",
+  "menuId": "v1_mock_menu_01",
+  "city": {
+    "chineseName": "伦敦",
+    "name": "London"
+  },
+  "country": {
+    "chineseName": "英国",
+    "name": "England"
+  },
+  "cuisines": [
+    "美国菜", "海鲜"
+  ],
+  "mainImage": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/封面照片.jpg",
+  "name": "Burger & Lobster",
+  "priceLevel": 3,
+  "rating": 4.5,
+  "address": "10 Wardour Street, London, W1D 6QF UK",
+  "desc": "故事起源于2011年，4个学生时期的朋友在莫斯科一处楼顶喝酒的时候，萌生了打造一家餐馆的想法。这间餐厅只做一"
+  + "或两样菜并把菜做到极致。因此在伦敦梅菲尔区的一家小型爱尔兰酒吧里，第一家Burger & Lobster就诞生了。\r"
+  + "早餐营业时间：\r"
+  + "周一至周五：6.30am-10am \r"
+  + "周六、日：7am-10.30am \r"
+  + "正餐营业时间：\r"
+  + "周一至周四：12:00-22:30 \r"
+  + "周五、六：12:00-23:00\r"
+  + "周日：12:00-22:00\r",
+  "detailImage": [
+    "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/Burger&Lobster1.jpg",
+    "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/Burger&Lobster2.jpg",
+    "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/Burger&Lobster3.jpg"
+  ],
+  "notes": "",
+  "phoneNumber": "0203 2058963",
+  "position": {
+    "type": "Point",
+    "coordinates": [-0.1314353, 51.5107867]
+  },
+  "isVisible": true,
+})
 module.exports = restaurants
