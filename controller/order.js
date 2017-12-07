@@ -58,7 +58,14 @@ module.exports = {
         if (err) {
           return common.failRes(res, err.message)
         }
-        common.successRes(res, r)
+        var order = r.toObject()
+        try {
+          order.orderDetail = JSON.parse(order.orderDetail)
+        }
+        catch (e) {
+          // ignore
+        }
+        common.successRes(res, order)
       })
   },
 }
