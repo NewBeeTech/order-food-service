@@ -57,6 +57,9 @@ module.exports = {
     },
     // 根据menuId获取菜单
     (restaurant, next) => {
+      if (!restaurant) {
+        return common.failRes(res, '获取餐厅信息失败')
+      }
       result = restaurant.toObject()
       model.Menu.findById(restaurant.menuId, next)
     },
