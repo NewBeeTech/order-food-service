@@ -13,6 +13,7 @@ module.exports = {
     model.Order
       .find(filter)
       .select('-__v')
+      .sort({createdTime: -1})
       .exec(function(err, r) {
         if (err) {
           return common.failRes(res, err.message)

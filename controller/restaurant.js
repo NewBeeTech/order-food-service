@@ -138,6 +138,10 @@ var local = {
         })
         min.default = min.checked = true
       }
+
+      if (!o.price) {
+        o.price = 0
+      }
       result.push(o)
     })
     return result
