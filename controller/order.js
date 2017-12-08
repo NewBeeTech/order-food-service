@@ -2,6 +2,7 @@ const common = require('../common')
 const model = require('../model')
 const _ = require('lodash')
 const async = require('async')
+const moment = require('moment')
 
 module.exports = {
   /*
@@ -61,6 +62,7 @@ module.exports = {
         var order = r.toObject()
         try {
           order.orderDetail = JSON.parse(order.orderDetail)
+          order.createdTime = moment(order.createdTime).format('YYYY-MM-DD')
         }
         catch (e) {
           // ignore
