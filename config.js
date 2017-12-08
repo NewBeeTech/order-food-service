@@ -20,8 +20,8 @@ module.exports = {
   // TODO: 部署时请根据需要更改配置
   auth: {
     uri: 'https://api.weixin.qq.com/sns/jscode2session',
-    appid: 'xxx',
-    secret: 'xxx',
+    appid: 'wx63bb49e66f6c6699',
+    secret: 'b3789f83903b47d8e76446222e5c8abb',
   },
 
   // TODO: 部署时请根据需要更改配置
