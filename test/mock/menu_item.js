@@ -174,14 +174,17 @@ arr = arr.concat([
           {
             "chineseName": "培根，枫糖和蓝莓",
             "name": "Bacon, maple syrup & blueberries",
+            "price": 6
           },
           {
             "chineseName": "糖渍水果和新鲜酸奶",
             "name": "fruit compote & fresh yoghurt",
+            "price": 8
           },
           {
             "chineseName": "糖和柠檬",
             "name": "sugar & lemon",
+            "price": 3
           },
         ],
         "title": {
