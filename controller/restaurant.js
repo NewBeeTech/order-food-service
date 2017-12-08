@@ -70,6 +70,7 @@ module.exports = {
         .exec(next)
     },
     (aLaCartes, next) => {
+      aLaCartes = local.transformALaCarte(aLaCartes)
       result.aLaCarte = _.groupBy(aLaCartes, o => {
         return o.category.chineseName
       })
@@ -108,4 +109,35 @@ module.exports = {
       return common.failRes(res, err.message)
     })
   },
+}
+
+var local = {
+  transformALaCarte(aLaCartes) {
+    var result = []
+    aLaCartes.forEach(c => {
+      var o = c.toObject()
+      var new_options = {}
+      if (o.options.radio && o.options.radio.content.length > 0) {
+        new_options.radio = o.options.radio
+      }
+      if (o.options.checkbox && o.options.checkbox.content.length > 0) {
+        new_options.checkbox = o.options.checkbox
+      }
+      o.options = new_options
+      if (o.options.radio) {
+        o.options.radio.content.forEach(c => {
+          if (!c.price) {
+            c.price = 0
+          }
+        })
+        var min = _.minBy(o.options.radio.content, c => {
+          return c.price
+        })
+        min.default = min.checked = true
+      }
+      result.push(o)
+    })
+    return result
+  }
+
 }
