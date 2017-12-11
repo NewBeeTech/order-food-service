@@ -42,6 +42,7 @@ module.exports = {
     },
     (result, next) => {
       common.successRes(res, {_id: result._id}, '订单保存成功')
+      common.logger.info('用户下单成功，餐厅id：', req.body.restaurantId)
     },
     ], function(err) {
       common.failRes(res, err.message)

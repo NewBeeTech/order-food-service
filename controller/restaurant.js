@@ -44,7 +44,7 @@ module.exports = {
    * 获取餐厅详细信息(聚合了单品和套餐)
    */
   getDetail: function(req, res, next) {
-    
+
     var result = {}
     var menu
     async.waterfall([
@@ -107,6 +107,7 @@ module.exports = {
     },
     (next) => {
       common.successRes(res, result)
+      common.logger.info('成功获取餐厅详情，餐厅id：', req.body._id)
     },
     ], function(err) {
       return common.failRes(res, err.message)
