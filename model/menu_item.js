@@ -14,7 +14,10 @@ var menuItemSchema = new Schema({
   },
   categoryNum: Number,        // 分类顺序
   menuItemNum: Number,        // 菜品顺序
-  description: String,        // 配料
+  description: {              // 配料
+    name: String,
+    chineseName: String,
+  },
   extraInfo: String,          // 附加信息
   image: String,              // 图片
   name: {                     // 名称

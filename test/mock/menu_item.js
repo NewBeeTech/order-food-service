@@ -10,7 +10,10 @@ var aLaCarte = {
   },
   "categoryNum": 1,
   "menuItemNum": 1,
-  "description": "配料信息mock数据",
+  "description": {
+    "name": "",
+    "chineseName": "配料信息mock数据"
+  },
   "extraInfo": "附加信息mock数据",
   "image": "https://m.360buyimg.com/n12/jfs/t2938/141/161562315/370464/79e5296/574e38faNb075dd83.jpg!q70.jpg",
   "name": {
@@ -94,7 +97,10 @@ arr = arr.concat([
     },
     "categoryNum": 1,
     "menuItemNum": 1,
-    "description": "香肠，培根，蘑菇，西红柿，黑布丁，茄汁黄豆，薯饼，自选鸡蛋，吐司面包",
+    "description": {
+      "name": "Sausage, bacon, mushrooms, tomato, black pudding, beans, hash browns, eggs of your choice and toast",
+      "chineseName": "香肠，培根，蘑菇，西红柿，黑布丁，茄汁黄豆，薯饼，自选鸡蛋，吐司面包"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/1.1FullEnglish.jpg",
     "name": {
@@ -161,7 +167,10 @@ arr = arr.concat([
     },
     "categoryNum": 1,
     "menuItemNum": 2,
-    "description": "",
+    "description": {
+      "name": "",
+      "chineseName": ""
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/1.2Waffle.jpg",
     "name": {
@@ -205,7 +214,10 @@ arr = arr.concat([
     },
     "categoryNum": 2,
     "menuItemNum": 1,
-    "description": "配柠檬蛋黄酱和辣西红柿酱",
+    "description": {
+      "name": "With lemon mayo and spicy tomato",
+      "chineseName": "配柠檬蛋黄酱和辣西红柿酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/2.1Calamari.jpg",
     "name": {
@@ -224,7 +236,10 @@ arr = arr.concat([
     },
     "categoryNum": 2,
     "menuItemNum": 2,
-    "description": "大虾、龙虾配墨西哥辣椒蛋黄酱",
+    "description": {
+      "name": "Prawn and lobster with chipotle mayo",
+      "chineseName": "大虾、龙虾配墨西哥辣椒蛋黄酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/2.2Croquettes.jpg",
     "name": {
@@ -243,7 +258,10 @@ arr = arr.concat([
     },
     "categoryNum": 3,
     "menuItemNum": 1,
-    "description": "生菜，西红柿，自制酸黄瓜，秘制汉堡酱",
+    "description": {
+      "name": "Lettuce, tomato, house made pickles and B&L's secret burger sauce",
+      "chineseName": "生菜，西红柿，自制酸黄瓜，秘制汉堡酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/3.1Burger.jpg",
     "name": {
@@ -288,7 +306,10 @@ arr = arr.concat([
     },
     "categoryNum": 3,
     "menuItemNum": 2,
-    "description": "生菜包10oz原味汉堡（无面包胚）",
+    "description": {
+      "name": "10oz Original Burger wrapped in iceberg lettuce, no bun",
+      "chineseName": "生菜包10oz原味汉堡（无面包胚）"
+    },
     "extraInfo": "",
     "image": "",
     "name": {
@@ -307,7 +328,10 @@ arr = arr.concat([
     },
     "categoryNum": 3,
     "menuItemNum": 3,
-    "description": "5oz汉堡胚龙虾肉，布里奶酪，松露龙蒿蛋黄酱，茴香，白菜",
+    "description": {
+      "name": "5oz burger topped with lobster meat, brie, truffle & tarragon mayo, fennel and Chinese cabbage",
+      "chineseName": "5oz汉堡胚龙虾肉，布里奶酪，松露龙蒿蛋黄酱，茴香，白菜"
+    },
     "extraInfo": "",
     "image": "",
     "name": {
@@ -327,7 +351,10 @@ arr = arr.concat([
     },
     "categoryNum": 4,
     "menuItemNum": 1,
-    "description": "磅半龙虾配秘制柠檬大蒜黄油酱",
+    "description": {
+      "name": "Steamed or grilled with a choice of clarified butter or B&L's famous lemon & garlic butter",
+      "chineseName": "磅半龙虾配秘制柠檬大蒜黄油酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/4.1Lobster.JPG",
     "name": {
@@ -365,7 +392,10 @@ arr = arr.concat([
     },
     "categoryNum": 4,
     "menuItemNum": 2,
-    "description": "龙虾配日本蛋黄酱和柠檬",
+    "description": {
+      "name": "Lobster with Japanese mayo & lemon",
+      "chineseName": "磅半龙虾配龙虾配日本蛋黄酱和柠檬秘制柠檬大蒜黄油酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/4.2Lobster.jpg",
     "name": {
@@ -385,7 +415,10 @@ arr = arr.concat([
     },
     "categoryNum": 5,
     "menuItemNum": 1,
-    "description": "自制经典香草奶酪蛋糕、糖渍蓝莓配饼干坯",
+    "description": {
+      "name": "Home baked classic vanilla cheesecake with blueberry compote on biscuit base",
+      "chineseName": "自制经典香草奶酪蛋糕、糖渍蓝莓配饼干坯"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/5.1Cheesecake.jpg",
     "name": {
@@ -404,7 +437,10 @@ arr = arr.concat([
     },
     "categoryNum": 5,
     "menuItemNum": 2,
-    "description": "巧克力布朗尼配香草冰淇淋和巧克力酱",
+    "description": {
+      "name": "Served with vanilla ice cream and chocolate sauce",
+      "chineseName": "巧克力布朗尼配香草冰淇淋和巧克力酱"
+    },
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/5.2Brownie.jpg",
     "name": {
