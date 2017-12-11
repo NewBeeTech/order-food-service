@@ -90,7 +90,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "早餐",
-      "name": ""
+      "name": "Breakfast"
     },
     "categoryNum": 1,
     "menuItemNum": 1,
@@ -116,8 +116,8 @@ arr = arr.concat([
           }
         ],
         "title": {
-          "chineseName": "配菜",
-          "name": "Garnish"
+          "chineseName": "额外配菜",
+          "name": "Extras"
         }
       },
       "radio": {
@@ -144,8 +144,8 @@ arr = arr.concat([
           },
         ],
         "title": {
-          "chineseName": "做法",
-          "name": "Cooking Method"
+          "chineseName": "自选鸡蛋",
+          "name": "Eggs of your choice"
         }
       }
     },
@@ -157,7 +157,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "早餐",
-      "name": ""
+      "name": "Breakfast"
     },
     "categoryNum": 1,
     "menuItemNum": 2,
@@ -188,8 +188,8 @@ arr = arr.concat([
           },
         ],
         "title": {
-          "chineseName": "做法",
-          "name": "Cooking Method"
+          "chineseName": "自选华夫饼",
+          "name": "Choice of waffle"
         }
       }
     },
@@ -201,7 +201,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "前菜",
-      "name": ""
+      "name": "Starter"
     },
     "categoryNum": 2,
     "menuItemNum": 1,
@@ -220,7 +220,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "前菜",
-      "name": ""
+      "name": "Starter"
     },
     "categoryNum": 2,
     "menuItemNum": 2,
@@ -239,7 +239,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "汉堡",
-      "name": ""
+      "name": "Burgers"
     },
     "categoryNum": 3,
     "menuItemNum": 1,
@@ -271,8 +271,8 @@ arr = arr.concat([
           },
         ],
         "title": {
-          "chineseName": "做法",
-          "name": "Cooking Method"
+          "chineseName": "肉饼熟度",
+          "name": "How do I like burger cooked"
         }
       },
       "price": 16,
@@ -284,7 +284,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "汉堡",
-      "name": ""
+      "name": "Burgers"
     },
     "categoryNum": 3,
     "menuItemNum": 2,
@@ -303,7 +303,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "汉堡",
-      "name": ""
+      "name": "Burgers"
     },
     "categoryNum": 3,
     "menuItemNum": 3,
@@ -323,7 +323,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "龙虾",
-      "name": ""
+      "name": "Lobsters"
     },
     "categoryNum": 4,
     "menuItemNum": 1,
@@ -347,8 +347,8 @@ arr = arr.concat([
           },
         ],
         "title": {
-          "chineseName": "做法",
-          "name": "Cooking Method"
+          "chineseName": "蒸还是明火烤",
+          "name": "Steamed or grilled?"
         }
       }
     },
@@ -361,7 +361,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "龙虾",
-      "name": ""
+      "name": "Lobsters"
     },
     "categoryNum": 4,
     "menuItemNum": 2,
@@ -369,7 +369,7 @@ arr = arr.concat([
     "extraInfo": "",
     "image": "http://caieatong.oss-eu-central-1.aliyuncs.com/static/v1/4.2Lobster.jpg",
     "name": {
-      "chineseName": "原味龙虾",
+      "chineseName": "原味龙虾卷",
       "name": "ORIGINAL ROLL"
     },
     "price": 25,
@@ -381,7 +381,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "甜品",
-      "name": ""
+      "name": "Desserts"
     },
     "categoryNum": 5,
     "menuItemNum": 1,
@@ -400,7 +400,7 @@ arr = arr.concat([
     "operator": "MOCKER",
     "category": {
       "chineseName": "甜品",
-      "name": ""
+      "name": "Desserts"
     },
     "categoryNum": 5,
     "menuItemNum": 2,

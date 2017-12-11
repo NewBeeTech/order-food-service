@@ -26,7 +26,10 @@ menu.push({
     "v1_mock_menuItem_010",
     "v1_mock_menuItem_011",
   ],
-  "setMenu": [],
+  "setMenu": [
+    "v1_mock_setMenu_001",
+    "v1_mock_setMenu_002",
+  ],
   "desc": "v1 mock menu"
 })
 module.exports = menu

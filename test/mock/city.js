@@ -34,7 +34,7 @@ citys.push({
   "country": {
     "chineseName": "英国",
     "currencyType": "£",
-    "name": "England",
+    "name": "UK",
   },
 })
 
