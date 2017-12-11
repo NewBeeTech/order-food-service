@@ -101,6 +101,11 @@ module.exports = {
             setMenu.setMenuDetail = _.groupBy(cartes, o => {
               return o.category.chineseName
             })
+            // 默认选中菜系里的第一个
+            for(var key in setMenu.setMenuDetail) {
+              setMenu.setMenuDetail[key][0].checked = true
+            }
+            
             result.setMenus[setMenu.name.chineseName] = setMenu
             nextSetMenu()
           })
