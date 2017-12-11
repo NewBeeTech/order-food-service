@@ -44,7 +44,7 @@ module.exports = {
    * 获取餐厅详细信息(聚合了单品和套餐)
    */
   getDetail: function(req, res, next) {
-    
+
     var result = {}
     var menu
     async.waterfall([
@@ -97,9 +97,15 @@ module.exports = {
             if (err) {
               return nextSetMenu(err)
             }
+            cartes = local.transformALaCarte(cartes)
             setMenu.setMenuDetail = _.groupBy(cartes, o => {
               return o.category.chineseName
             })
+            // 默认选中菜系里的第一个
+            for(var key in setMenu.setMenuDetail) {
+              setMenu.setMenuDetail[key][0].checked = true
+            }
+            
             result.setMenus[setMenu.name.chineseName] = setMenu
             nextSetMenu()
           })
@@ -107,6 +113,7 @@ module.exports = {
     },
     (next) => {
       common.successRes(res, result)
+      common.logger.info('成功获取餐厅详情，餐厅id：', req.body._id)
     },
     ], function(err) {
       return common.failRes(res, err.message)

@@ -56,7 +56,7 @@ restaurants.push({
   },
   "country": {
     "chineseName": "英国",
-    "name": "England"
+    "name": "UK"
   },
   "cuisines": [
     "美国菜", "海鲜"
@@ -84,7 +84,7 @@ restaurants.push({
   "phoneNumber": "0203 2058963",
   "position": {
     "type": "Point",
-    "coordinates": [-0.1314353, 51.5107867]
+    "coordinates": [51.5107867, -0.1314353]
   },
   "isVisible": true,
 })

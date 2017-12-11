@@ -24,4 +24,45 @@ var setMenu = [
   "price": 45,
 },
 ]
+
+setMenu = setMenu.concat([
+  {
+    "_id": "v1_mock_setMenu_001",
+    "operateTime": new Date(),
+    "operator": "MOCKER",
+    "setMenuDetail": [
+      "v1_mock_menuItem_003",
+      "v1_mock_menuItem_004",
+      "v1_mock_menuItem_008",
+      "v1_mock_menuItem_009",
+      "v1_mock_menuItem_010",
+      "v1_mock_menuItem_011"
+    ],
+    "desc": "",
+    "name": {
+      chineseName: "龙虾套餐",
+      name: 'Lobster Set Menu'
+    },
+    "price": 50,
+  },
+  {
+    "_id": "v1_mock_setMenu_002",
+    "operateTime": new Date(),
+    "operator": "MOCKER",
+    "setMenuDetail": [
+      "v1_mock_menuItem_003",
+      "v1_mock_menuItem_004",
+      "v1_mock_menuItem_005",
+      "v1_mock_menuItem_006",
+      "v1_mock_menuItem_010",
+      "v1_mock_menuItem_011"
+    ],
+    "desc": "",
+    "name": {
+      chineseName: "汉堡套餐",
+      name: 'Burger Set Menu'
+    },
+    "price": 50,
+  },
+])
 module.exports = setMenu
