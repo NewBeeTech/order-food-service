@@ -11,7 +11,7 @@ module.exports = {
 
   // TODO: 部署时请根据需要更改配置
   db: {
-    // url: 'mongodb://root:xxxxx@dds-bp12f333bc784c141173.mongodb.rds.aliyuncs.com:3717,' +
+    // url: 'mongodb://caieatong:xxxxx@dds-bp12f333bc784c141173.mongodb.rds.aliyuncs.com:3717,' +
     // 'dds-bp12f333bc784c142459.mongodb.rds.aliyuncs.com:3717/caieatong?replicaSet=mgset-4725333',
     url: 'mongodb://localhost/caieatong',
     poolSize: 6,
