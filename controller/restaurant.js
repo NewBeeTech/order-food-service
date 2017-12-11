@@ -97,6 +97,7 @@ module.exports = {
             if (err) {
               return nextSetMenu(err)
             }
+            cartes = local.transformALaCarte(cartes)
             setMenu.setMenuDetail = _.groupBy(cartes, o => {
               return o.category.chineseName
             })

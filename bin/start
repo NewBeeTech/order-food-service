@@ -6,7 +6,7 @@ n_process=1
 app_name=order-food-service
 
 pm2=`find .. -path '*/.bin/pm2'|head -1`
-$pm2 start app.js -n $app_name -i $n_process
+$pm2 start app.js -n $app_name
 
 echo let\'s watch log for a while
 $pm2 logs $app_name &
