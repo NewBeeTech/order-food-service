@@ -1,4 +1,7 @@
 const model = require('../model')
+const logger = require('../common').logger
+const moment = require('moment')
+const config =  require('../config')
 
 const auth_paths = [
   '/api/order/save',
@@ -15,15 +18,30 @@ module.exports = function(req, res, next) {
   }
 
   model.Session.find({}).exec(function(err, result) {
+    var session_content;
+    var session_obj;
+
     for(var i=0; i<result.length; i++) {
       var r = result[i] && JSON.parse(result[i].session)
       if (r[sessionid]) {
-        req._internal = r[sessionid]
+        session_content = r[sessionid]
+        session_obj = result[i]
       }
     }
-    if (req._internal) {
-      return next()
+    if (!session_content) {
+      return res.status(200).send({code: -2, message: "sessionid已失效"})
     }
-    return res.status(401).send('请先登录')
+
+    // 刷新过期时间
+    model.Session.update(
+      {_id: session_obj._id},
+      {expires: moment().add('milliseconds', config.session.maxAge).toDate()},
+      function(err) {
+        if (err) {
+          logger.error("刷新过期时间失败")
+        }
+        req._internal = session_content
+        next()
+    })
   })
 }
