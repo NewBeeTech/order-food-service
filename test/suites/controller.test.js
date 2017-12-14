@@ -32,7 +32,7 @@ describe('controller', function() {
       assert(!err)
       assert.equal(res.statusCode, 200)
       var item = body.data.aLaCarte['早餐'][0].options.radio.content[0]
-      assert(item.price === 0)
+      assert(item.price === 3)
       assert(item.default === item.checked === true)
       done()
     }, (err) => {

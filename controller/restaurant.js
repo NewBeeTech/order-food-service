@@ -73,7 +73,7 @@ module.exports = {
         .exec(next)
     },
     (aLaCartes, next) => {
-      aLaCartes = local.transformALaCarte(aLaCartes)
+      aLaCartes = local.transformALaCarte(aLaCartes, true)
       result.aLaCarte = _.groupBy(aLaCartes, o => {
         return o.category.chineseName
       })
@@ -122,7 +122,7 @@ module.exports = {
 }
 
 var local = {
-  transformALaCarte(aLaCartes) {
+  transformALaCarte(aLaCartes, select_equal) {
     var result = []
     aLaCartes.forEach(c => {
       var o = c.toObject()
@@ -140,10 +140,22 @@ var local = {
             c.price = 0
           }
         })
-        var min = _.minBy(o.options.radio.content, c => {
-          return c.price
-        })
-        min.default = min.checked = true
+
+        if (select_equal) {
+          var equal = _.find(o.options.radio.content, c => {
+            return c.price === o.price
+          })
+          if (!equal) {
+            equal = o.options.radio.content[0]
+          }
+          equal.default = equal.checked = true
+        }
+        else {
+          var min = _.minBy(o.options.radio.content, c => {
+            return c.price
+          })
+          min.default = min.checked = true
+        }
       }
 
       if (!o.price) {
