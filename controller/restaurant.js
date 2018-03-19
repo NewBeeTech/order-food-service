@@ -55,13 +55,30 @@ module.exports = {
         .select('-__v')
         .exec(next)
     },
-    // 根据menuId获取菜单
+    // 获取餐厅所属城市的币种符号
     (restaurant, next) => {
       if (!restaurant) {
         return common.failRes(res, '获取餐厅信息失败')
       }
       result = restaurant.toObject()
-      model.Menu.findById(restaurant.menuId, next)
+
+      var cityFilter = {
+        'country.chineseName': restaurant.country.chineseName,
+        'country.name': restaurant.country.name
+      }
+      model.City
+        .find(cityFilter)
+        .select('-__v')
+        .exec(next)
+    },
+    // 根据menuId获取菜单
+    (_citys, next) => {
+      if (!_citys || !_citys[0]) {
+        return common.failRes(res, '获取餐厅所属城市失败')
+      }
+      result.country.currencyType = _citys[0].country.currencyType
+      
+      model.Menu.findById(result.menuId, next)
     },
     // 获取菜单下的单品信息
     (_menu, next) => {
@@ -73,7 +90,7 @@ module.exports = {
         .exec(next)
     },
     (aLaCartes, next) => {
-      aLaCartes = local.transformALaCarte(aLaCartes)
+      aLaCartes = local.transformALaCarte(aLaCartes, true)
       result.aLaCarte = _.groupBy(aLaCartes, o => {
         return o.category.chineseName
       })
@@ -122,7 +139,7 @@ module.exports = {
 }
 
 var local = {
-  transformALaCarte(aLaCartes) {
+  transformALaCarte(aLaCartes, select_equal) {
     var result = []
     aLaCartes.forEach(c => {
       var o = c.toObject()
@@ -140,10 +157,22 @@ var local = {
             c.price = 0
           }
         })
-        var min = _.minBy(o.options.radio.content, c => {
-          return c.price
-        })
-        min.default = min.checked = true
+
+        if (select_equal) {
+          var equal = _.find(o.options.radio.content, c => {
+            return c.price === o.price
+          })
+          if (!equal) {
+            equal = o.options.radio.content[0]
+          }
+          equal.default = equal.checked = true
+        }
+        else {
+          var min = _.minBy(o.options.radio.content, c => {
+            return c.price
+          })
+          min.default = min.checked = true
+        }
       }
 
       if (!o.price) {

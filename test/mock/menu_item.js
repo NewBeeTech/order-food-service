@@ -38,7 +38,8 @@ var aLaCarte = {
       "content": [
         {
           "chineseName": "蒸",
-          "name": "Steam"
+          "name": "Steam",
+          "price": 3,
         }
       ],
       "title": {
@@ -131,22 +132,27 @@ arr = arr.concat([
           {
             "chineseName": "溏心鸡蛋",
             "name": "Soft boiled egg",
+            "price": 3,
           },
           {
             "chineseName": "水煮嫩蛋",
             "name": "poached egg",
+            "price": 3,
           },
           {
             "chineseName": "半熟煎鸡蛋",
             "name": "fried egg – running yolk",
+            "price": 3,
           },
           {
             "chineseName": "全熟煎鸡蛋",
             "name": "fried egg–fully cooked",
+            "price": 3,
           },
           {
             "chineseName": "西式炒蛋",
             "name": "scrambled egg",
+            "price": 3,
           },
         ],
         "title": {
@@ -278,14 +284,17 @@ arr = arr.concat([
           {
             "chineseName": "肉饼五成熟",
             "name": "medium",
+            "price": 16,
           },
           {
             "chineseName": "肉饼八成熟",
             "name": "medium well",
+            "price": 16,
           },
           {
             "chineseName": "肉饼全熟",
             "name": "well done",
+            "price": 16,
           },
         ],
         "title": {
@@ -367,10 +376,12 @@ arr = arr.concat([
           {
             "chineseName": "蒸",
             "name": "steamed",
+            "price": 31,
           },
           {
             "chineseName": "明火烤",
             "name": "grilled",
+            "price": 31,
           },
         ],
         "title": {
