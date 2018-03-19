@@ -55,13 +55,30 @@ module.exports = {
         .select('-__v')
         .exec(next)
     },
-    // 根据menuId获取菜单
+    // 获取餐厅所属城市的币种符号
     (restaurant, next) => {
       if (!restaurant) {
         return common.failRes(res, '获取餐厅信息失败')
       }
       result = restaurant.toObject()
-      model.Menu.findById(restaurant.menuId, next)
+
+      var cityFilter = {
+        'country.chineseName': restaurant.country.chineseName,
+        'country.name': restaurant.country.name
+      }
+      model.City
+        .find(cityFilter)
+        .select('-__v')
+        .exec(next)
+    },
+    // 根据menuId获取菜单
+    (_citys, next) => {
+      if (!_citys || !_citys[0]) {
+        return common.failRes(res, '获取餐厅所属城市失败')
+      }
+      result.country.currencyType = _citys[0].country.currencyType
+      
+      model.Menu.findById(result.menuId, next)
     },
     // 获取菜单下的单品信息
     (_menu, next) => {
